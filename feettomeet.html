@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Chuyển Feet Và Meet</h1>
+<p>Form Currency</p>
+<select id="chuyendoi1">
+    <option value="feet">Feet</option>
+    <option value="meter">Meter</option>
+</select>
+
+<p>To Currency </p>
+<select id="chuyendoi2">
+    <option value="meter">Meet</option>
+    <option value="feet">Feet</option>
+</select>
+<br><br>
+
+
+<input id="nhap_so" placeholder="Nhập Số"/>
+<p id="demo"></p>
+
+<button onclick="convertFeetAndMeters()">Chuyển</button>
+
+
+<script>
+    function convertFeetAndMeters() {
+        let nhap_so = document.getElementById("nhap_so").value;
+        let from_chuyen = document.getElementById("chuyendoi1").value;
+        let to_chuyen = document.getElementById("chuyendoi2").value;
+        let result = 0;
+        if (from_chuyen == "feet" && to_chuyen == "meter") {
+            result =  nhap_so * 0.3048;
+        } else {
+            if (from_chuyen == "meter" && to_chuyen == "feet") {
+                result =  nhap_so * 3.2808;
+            }
+        }
+        document.getElementById("demo").innerHTML = result;
+    }
+</script>
+</body>
+</html>
